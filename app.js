@@ -84,3 +84,23 @@ navLinks.addEventListener('click', function(e) {
 
 })
 
+
+// Tabbed component
+const tabs = document.querySelectorAll('.operations__tab');
+const tabscontainer = document.querySelector('.operations__tab-container');
+const tabscontent = document.querySelectorAll('.operations__content');
+
+//event delegation
+tabscontainer.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.operations__tab');
+  if(!clicked) return;
+
+  //Active tab
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+
+  // Active content area
+  tabscontent.forEach(c => c.classList.remove('operations__content--active'));
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
+})
+
