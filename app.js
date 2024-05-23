@@ -133,3 +133,15 @@ function handleHover(e){
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+
+// Sticky Navigation
+const initialcoords = section1.getBoundingClientRect();
+console.log(initialcoords);
+window.addEventListener('scroll', function() {
+  if(window.scrollY > initialcoords.top){
+    nav.classList.add('sticky')
+  }else{
+    nav.classList.remove('sticky');
+  }
+}) 
