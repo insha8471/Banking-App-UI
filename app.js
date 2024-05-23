@@ -1,12 +1,14 @@
 "use strict";
 
 
-// Modal Window -- sign-up/login page
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btncloseModal = document.querySelector('.btn--close-modal');
 const btnopenModal = document.querySelectorAll('.btn--show-modal');
+const nav = document.querySelector('.nav');
+
+// Modal Window -- sign-up/login page
+
 
 
 const openModal = function(e) {
@@ -104,3 +106,30 @@ tabscontainer.addEventListener('click', (e) => {
   document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
 })
 
+
+
+//  Menu fade animation  ****************************************************************=>
+ 
+function handleHover(e){
+  if(e.target.classList.contains('nav__link')){
+    const link = e.target;
+    console.log(e);
+    console.log(this);
+    
+    if(e.target.classList.contains('nav__link')){
+      const link = e.target;
+      const sibling = link.closest('.nav').querySelectorAll('.nav__link');
+      const logo = link.closest('.nav').querySelector('img');
+
+      sibling.forEach(el => {
+        if (el !== link) el.style.opacity = this;
+      });
+      logo.style.opacity = this;
+    }
+  }
+}
+
+
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+nav.addEventListener('mouseout', handleHover.bind(1));
