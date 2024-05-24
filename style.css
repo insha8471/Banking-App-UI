@@ -124,6 +124,10 @@ img {
   z-index: 100;
 }
 
+.nav > img {
+  height: 45px;
+}
+
 /* doubt  */
 .nav.sticky {
   position: fixed;
