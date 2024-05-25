@@ -238,7 +238,7 @@ h4 {
 
 /* FEATURES */
 
-.features {
+.feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -397,7 +397,7 @@ h4 {
 .slide {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 110%;
   height: 50rem;
 
   display: flex;
