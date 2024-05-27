@@ -52,14 +52,14 @@ btnScrollTo.addEventListener('click', function(e){
   // window.scrollTo(s1coords.left + window.pageXOffset,s1coords.top + window.pageYOffset);
 
   // 2
-  window.scrollTo({
-    left: s1coords.left + window.pageXOffset,
-    top: s1coords.top + window.pageYOffset,
-    behavior: 'smooth'
-  })
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth'
+  // })
 
   // New method 
-  // section1.scrollIntoView({ behavior: 'smooth' });
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
 
 // page Navigation -- scrolling
@@ -183,7 +183,7 @@ const headerObserver = new IntersectionObserver(stickyNav ,{
 headerObserver.observe(header);
 
 
-//      Reveal Section
+//      Reveal Section *******************************************
 
 const allSections = document.querySelectorAll('.section');
 
@@ -201,7 +201,7 @@ const sectionObs = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function(section){
   sectionObs.observe(section);
-  // section.classList.add('section--hidden');
+  section.classList.add('section--hidden');
 })
 
 
@@ -312,9 +312,9 @@ const slider = function(){
   // by clicking the dot
   dotcontainer.addEventListener('click', function(e) {
       if(e.target.classList.contains('dots__dot')) {
-          const {slide} = e.target.dataset;
-          goToSlide(slide);
-          activateDot(slide);
+        const {slide} = e.target.dataset;
+        goToSlide(slide);
+        activateDot(slide);
       }
   })
 };
